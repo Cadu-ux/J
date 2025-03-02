@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04/03</title>
+    <style>
+        @charset "UTF-8";
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+audio {
+    display: none;
+}
+
+body {
+    background-color:rgb(12, 46, 149);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+body > main > div{
+    background-color: rgb(173, 138, 92);
+    color: rgb(232, 232, 232);
+    padding: 10px;
+    
+    border-radius: 10px;
+    margin: auto;
+    text-align: center;
+    height: 210px;
+    width: 500px;
+}
+
+body > main > div > p {
+    font-size: 19px;
+    padding: 20px;
+}
+
+.pag2 {
+    color: rgb(218, 218, 218);
+    background-color: rgb(124, 92, 52);
+    height: 1170px;
+    width: 400px;
+}
+.pag2 > p {
+    font-size: 19px;
+    padding: 20px;
+}
+.prox {
+    padding: 10px;
+float: right;
+}
+    </style>
+</head>
+<body>
+<main>
+    <div>
+        <p>Talvez eu já tenha gostado superficialmente de alguém,mas eu nunca amei ninguém da forma como te amo,chega a ser bizarro.Eu sinto como se eu tivesse destinado a conhecer você desde que eu nasci,e não é exagero,eu penso dessa forma e penso a muito tempo.Tanto romanticamente,quanto platônica mente,de qualquer forma,eu te amo.</p>
+    </div>
+    <a href="pag5.html"><img src="imagens/proximo.png" alt="" class="prox"></a>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        et audio = document.getElementById("background-audio");
+
+        if (!audio) {
+           
+            audio = document.createElement("audio");
+            audio.id = "background-audio";
+            audio.src = "Infrunami.mp3"; 
+            audio.loop = true;
+            document.body.appendChild(audio);
+
+           
+            const savedTime = localStorage.getItem("audioTime");
+            if (savedTime) {
+                audio.currentTime = parseFloat(savedTime);
+            }
+
+            
+            audio.play().catch(error => console.log("Autoplay bloqueado:", error));
+        }
+
+        
+        window.addEventListener("beforeunload", () => {
+            localStorage.setItem("audioTime", audio.currentTime);
+        });
+    </script>
+</body>
+</html>

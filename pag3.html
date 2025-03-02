@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04/03</title>
+    <style>
+        @charset "UTF-8";
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+audio {
+    display: none;
+}
+
+body {
+    background-color:rgb(12, 12, 149);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+body > main > div{
+    background-color: rgb(173, 138, 92);
+    color: rgb(232, 232, 232);
+    padding: 10px;
+    
+    border-radius: 10px;
+    margin: auto;
+    text-align: center;
+    height: 400px;
+    width: 500px;
+}
+
+body > main > div > p {
+    font-size: 19px;
+    padding: 20px;
+}
+
+.pag2 {
+    color: rgb(218, 218, 218);
+    background-color: rgb(124, 92, 52);
+    height: 1170px;
+    width: 400px;
+}
+.pag2 > p {
+    font-size: 19px;
+    padding: 20px;
+}
+.prox {
+    padding: 10px;
+float: right;
+}
+    </style>
+</head>
+<body>
+<main>
+    <div>
+        <p>Em certo ponto, você começou a fazer parte dos meus dias.Talvez você não saiba completamente,mas passei por uma época muito ruim pro meu psicológico em 2022,tava realmente preocupante,e era a época em que eu mais cogitava procurar tratamento psicológico.Durante esse tempo, literalmente todas as vezes em que você falava comigo,faziam com que eu me sentisse um pouco mais vivo,um pouco mais eu.Ninguém nunca fez o que você fez por mim,e eu sou eternamente grato a você,portanto, obrigado.Do fundo do meu coração,eu agradeço por tudo que já fez por mim,e te digo que apesar de tudo que aconteceu entre nós,nunca cogitei deixar de ser seu amigo.</p>
+    </div>
+    <a href="pag4.html"><img src="imagens/proximo.png" alt="" class="prox"></a>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        et audio = document.getElementById("background-audio");
+
+        if (!audio) {
+           
+            audio = document.createElement("audio");
+            audio.id = "background-audio";
+            audio.src = "Infrunami.mp3"; 
+            audio.loop = true;
+            document.body.appendChild(audio);
+
+           
+            const savedTime = localStorage.getItem("audioTime");
+            if (savedTime) {
+                audio.currentTime = parseFloat(savedTime);
+            }
+
+            
+            audio.play().catch(error => console.log("Autoplay bloqueado:", error));
+        }
+
+        
+        window.addEventListener("beforeunload", () => {
+            localStorage.setItem("audioTime", audio.currentTime);
+        });
+    </script>
+</body>
+</html>

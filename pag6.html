@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04/03</title>
+    <style>
+        @charset "UTF-8";
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+audio {
+    display: none;
+}
+
+body {
+    background-color:rgb(12, 46, 149);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+body > main > div{
+    background-color: rgb(173, 138, 92);
+    color: rgb(232, 232, 232);
+    padding: 10px;
+    
+    border-radius: 10px;
+    margin: auto;
+    text-align: center;
+    height: 400px;
+    width: 500px;
+}
+
+body > main > div > p {
+    font-size: 19px;
+    padding: 20px;
+}
+
+.pag2 {
+    color: rgb(218, 218, 218);
+    background-color: rgb(124, 92, 52);
+    height: 1170px;
+    width: 400px;
+}
+.pag2 > p {
+    font-size: 19px;
+    padding: 20px;
+}
+.prox {
+    padding: 10px;
+float: right;
+}
+    </style>
+</head>
+<body>
+<main>
+    <div>
+        <p>Eu sei que isso tá parecendo mais uma declaração do que uma forma de te parabenizar no seu dia,mas isso tudo, além de um parabéns, é um obrigado,por você ser você mesma,e por nunca ter mudado apesar de todos os problemas.Sei que tá acontecendo muita coisa ao seu redor nesse momento,e eu sinto muito, de verdade.Eu sei que você vai conseguir sair dessa,por mais difícil que seja e por mais que você não possa enxergar um futuro no momento.Se sentir que não tem ninguém,que está completamente sozinha,se lembre que você sempre vai ter a mim,e que eu vou estar sempre disposto a te ajudar da forma que eu puder.Obrigado de coração por tudo que já fez por mim,e...</p>
+    </div>
+    <a href="flowers/flowers.html"><img src="imagens/proximo.png" alt="" class="prox"></a>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        et audio = document.getElementById("background-audio");
+
+        if (!audio) {
+           
+            audio = document.createElement("audio");
+            audio.id = "background-audio";
+            audio.src = "Infrunami.mp3"; 
+            audio.loop = true;
+            document.body.appendChild(audio);
+
+           
+            const savedTime = localStorage.getItem("audioTime");
+            if (savedTime) {
+                audio.currentTime = parseFloat(savedTime);
+            }
+
+            
+            audio.play().catch(error => console.log("Autoplay bloqueado:", error));
+        }
+
+        
+        window.addEventListener("beforeunload", () => {
+            localStorage.setItem("audioTime", audio.currentTime);
+        });
+    </script>
+</body>
+</html>

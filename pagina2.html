@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04/03</title>
+    <link rel="stylesheet" href="estilosp/style.css">
+</head>
+<body>
+
+    <span class="pag2">
+        <p>Primeiro,vou voltar no tempo,e pro que eu pensava no tempo em que te conheci.Eu sempre fui uma pessoa muito fechada pros outros e ranzinza,não sei como consegui tantos amigos,mas enfim,quando você entrou naquele grupo e começou a falar,de primeira eu não gostei de você.Lembro que você dizia "calado" pra mim quase sempre na brincadeira,mas as vezes eu me estressava real kkkkkkkkkkk.Passei umas boas horas procurando imagens sobre a época,mas não achei,só umas de tempos depois.</p>
+        <img src="imagens/Screenshot_20220908-191001_WhatsAppBusiness.jpg" alt="">
+        <p>Mas isso não durou muito tempo.Aos poucos,fui me aproximando de você (mesmo ironicamente morando longe),e cada vez mais gostava de passar meu tempo conversando com você.Assim foram se passando os dias e,antes que eu percebesse,eu já te amava.</p>
+    </span>
+    <div>
+        <a href="pag3.html"><img src="imagens/proximo.png" alt="" class="prox"></a>
+    </div>
+    
+
+
+
+
+
+
+
+
+    <script>
+        et audio = document.getElementById("background-audio");
+
+        if (!audio) {
+           
+            audio = document.createElement("audio");
+            audio.id = "background-audio";
+            audio.src = "Infrunami.mp3"; 
+            audio.loop = true;
+            document.body.appendChild(audio);
+
+           
+            const savedTime = localStorage.getItem("audioTime");
+            if (savedTime) {
+                audio.currentTime = parseFloat(savedTime);
+            }
+
+            
+            audio.play().catch(error => console.log("Autoplay bloqueado:", error));
+        }
+
+        
+        window.addEventListener("beforeunload", () => {
+            localStorage.setItem("audioTime", audio.currentTime);
+        });
+    </script>
+</body>
+</html>

@@ -7,6 +7,63 @@
     <link rel="stylesheet" href="estilosp/style.css">
 </head>
 <body>
-    
+
+    <main>
+        <div>
+            <img src="imagens/bento.jpg" alt="">
+            
+            <p>Opa,se você tá lendo isso, é dia 04/03/2025 e eu consegui fazer isso aqui a tempo.É seu aniversário de 18 anos e normalmente eu faço só textos,mas dessa vez vou fazer isso mais trabalhado.Me perdoe por qualquer erro ou desvio e pelo design do site que nao tá tão atrativo,tem muito tempo que não escrevo esse tipo de coisa.</p>
+        </div>
+        <a href="pagina2.html"><img src="imagens/proximo.png" alt="" class="prox"></a>
+    </main>
+
+
+
+
+
+    <audio preload="metadata" controls id="background-audio" autoplay>
+        source src="Infrunami.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // Verifica se já existe um áudio tocando
+        let audio = document.getElementById("background-audio");
+
+        if (!audio) {
+            // Cria o elemento de áudio apenas uma vez
+            audio = document.createElement("audio");
+            audio.id = "background-audio";
+            audio.src = "Infrunami.mp3"; // Substitua pelo caminho correto
+            audio.loop = true;
+            document.body.appendChild(audio);
+
+            // Recupera o tempo salvo no localStorage
+            const savedTime = localStorage.getItem("audioTime");
+            if (savedTime) {
+                audio.currentTime = parseFloat(savedTime);
+            }
+
+            // Toca o áudio automaticamente (se permitido pelo navegador)
+            audio.play().catch(error => console.log("Autoplay bloqueado:", error));
+        }
+
+        // Salva o tempo atual do áudio antes de sair da página
+        window.addEventListener("beforeunload", () => {
+            localStorage.setItem("audioTime", audio.currentTime);
+        });
+    </script>
 </body>
 </html>
