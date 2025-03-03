@@ -10,11 +10,15 @@ audio {
 }
 
 body {
-    background-color:rgb(12, 12, 149);
+    background-color:rgb(26, 69, 167);
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100;
+    height: 100vh;
+    background-image: url(../imagens/wallpapersden.com_daisies-flowers-field_1920x1080.jpg);
+    background-position: center center;
+    background-size: cover ;
+    background-repeat: no-repeat;
 }
 body > main > div{
     background-color: rgb(173, 138, 92);
@@ -24,7 +28,7 @@ body > main > div{
     border-radius: 10px;
     margin: auto;
     text-align: center;
-    height: 500px;
+    height: 530px;
     width: 500px;
 }
 
